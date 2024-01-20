@@ -349,7 +349,7 @@ def thread_machine_content(machine, machine_content, idx, all_routes, failover_p
             for route in pulled_routes["routes"]:
                 # Get the remaining routes - No exits or failover pairs
                 if route["prefix"] != "0.0.0.0/0" and route["prefix"] != "::/0" and route["prefix"] not in failover_pair_prefixes:
-                    app.logger.debug("Route:  ["+str(route['machine']['name'])+"] id: "+str(route['id'])+" / prefix: "+str(route['prefix'])+" enabled?:  "+str(route['enabled']))
+                    app.logger.debug("Route:  ["+str(route['node']['name'])+"] id: "+str(route['id'])+" / prefix: "+str(route['prefix'])+" enabled?:  "+str(route['enabled']))
                     route_enabled = "red"
                     route_tooltip = 'enable'
                     if route["enabled"]:
