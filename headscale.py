@@ -298,9 +298,9 @@ def get_machine_routes(url, api_key, machine_id):
         }
     )
     if response.status_code == 200:
-        app.logger.info("Routes obtained")
+        app.logger.info("Routes obtained for machine %s", str(machine_id))
     else:
-        app.logger.error("Failed to get routes:  %s", str(response.json()))
+        app.logger.error("Failed to get routes for machine %s: %s", str(machine_id), str(response.json()))
     return response.json()
 
 # Gets routes for the entire tailnet
